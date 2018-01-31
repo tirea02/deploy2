@@ -3,18 +3,32 @@ const path = require('path');
 
 const app = express();
 
-app.get('/', (req, res) => {
-    res.status(200).sendFile(path.join(__dirname, 'index.html'));
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+app.engine('html', require('ejs').renderFile);
+
+// app.get('/', (req, res) => {
+//     res.status(200).sendFile(path.join(__dirname, 'index.html'));
+// });
+
+app.get('/', function(req, res) {
+    res.render('index', {
+        userData : 'test'
+    });
 });
 
-app.listen(9999,'0.0.0.0' () => {
+app.get('/index-ko', (req, res) => {
+    res.status(200).sendFile(path.join(__dirname, 'index-ko.html'));
+});
+app.listen(50451, () => {
     console.info('Running on port 9999');
 });
 
 
 // Routes
 app.use('/api/discord', require('./api/discord'));
-
+app.use(express.static('static'));
+// app.use(express.static('images'));
 
 app.use((err, req, res, next) => {
     switch (err.message) {

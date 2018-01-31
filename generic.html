@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>How to use</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- 합쳐지고 최소화된 최신 CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+	</head>
+	<body>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Melody</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="generic.html">How to use</a></li>
+											<li><a href="team.html">Team Dicoder</a></li>
+											<!--
+											<li><a href="elements.html">Elements</a></li>
+											<li><a href="#">Sign Up</a></li>
+											<li><a href="#">Log In</a></li>
+										-->
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2> Melody Tutorial</h2>
+							<p>How to use Melody bot wise</p>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+
+								<!--<h3>interact with bot by command line</h3>-->
+								<!--<div class="generic_video">-->
+								<!--<div class="video"><video src="melody_tutorial_opt2.mp4" autoplay="true" loop="true" ></video></div>-->
+								<!--</div>-->
+								<!--<p>After adding bot to your server please try "!!tutorial" command it will briefly show command list.</p>-->
+
+								<!--<hr />-->
+								<div class="command">
+								<h4>list of basic command</h4>
+								<ul>
+									<li><b>!!language</b> : select server language 1.Korean 2.English</li>
+									<li><b>!!tutorial</b> : simple tutorial for Melody</li>
+									<li><b>!!help</b> : DM to user Melody tutorial</li>
+									<li><b>!!summon</b> : summon melody to my voice channel</li>
+									<li><b>!!patchnote</b> : show lastest patch note</li>
+									<li><b>!!my</b> : show all my playlist</li>
+								</ul>
+									<h4>List of play command</h4>
+									<ul>
+									<li><b>!!play 'youtubelink'</b> : play youtube link <i tabindex="0" class="fa fa-question-circle-o" aria-hidden="true" role="button"  data-toggle="modal" data-target="#myModal"></i>
+									</li>
+
+									<!-- Modal -->
+									<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+													<h4 class="modal-title" id="myModalLabel">Why there is 2 case?</h4>
+												</div>
+												<div class="modal-body">
+													There is two type of youtube link
+													<br>1.sigle video link
+													<br>2.playlist link.
+													<br>3. text to search in youtube
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<p>Case1 : single video link ->  play single song</p>
+									<p>ex) !!play https://www.youtube.com/watch?v=MhQKe-aERsU</p>
+									<p>Case2 : youtube playlist of video -> play all song in playlist</p>
+									<p>ex) !!play https://www.youtube.com/watch?v=MhQKe-aERsU&list=RDMhQKe-aERsU</p>
+									<p>Case3 : text to search on youtube -> search text in youtube and play top listed video</p>
+									<p>ex) !!play tangled i see the light</p>
+								<li><b>!!now</b> : show enqueued songs  " <i tabindex="0" class="fa fa-question-circle-o" aria-hidden="true" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?"></i></li>
+								<li><b>!!pause</b> : Melody pauses playing song</li>
+								<li><b>!!resume</b> : Melody resume paused song</li>
+								<li><b>!!skip</b> : Melody skip now playing song and play next enqueued song  <i tabindex="0" class="fa fa-question-circle-o" data-toggle="popover" data-trigger="focus" title="Authority for skip" data-content="Requester of song can skip song without vote. Other people in voice channel should vote to skip song. People who is not in voice channel can't skeip song."></i></li>
+								<li><b>!!stop</b> : stop melody's action and kick out melody from voice channel</li>
+
+
+
+
+								</ul>
+								<h4> List of playlist command</h4>
+								<ul>
+									<li><b>!!playlist create 'playlist_name'</b> : create your play list</li>
+									<p>ex) !!playlist create disney </p>
+									<li><b>!!playlist add 'playlist_name'  'youtube_link'</b> : add play list</li>
+									<p>ex) !!playlist add disney  https://www.youtube.com/watch?v=J0lG8YorBsU</p>
+									<li><b>!!playlist show 'disney'</b> : check your playlist</li>
+									<p>ex) !!playlist show madmovie_bgm</p>
+									<li><b>!!!playlist load 'playlist_name'</b> : load playlist
+										<i tabindex="0" class="fa fa-question-circle-o" aria-hidden="true" role="button" data-toggle="popover" data-trigger="focus" title="load Rule" data-content="You can only load playlist you've created. Please use search command to load other people's playlist "></i></li>
+									<p>ex) !!playlist load disney</p>
+									<li><b>!!playlist search 'playlist_name'</b> : List all playlist with their creater. You can select and load it by typing index of playlist.</li>
+									<p>ex) !!playlist search disney</p>
+									<li><b>!!playlist delete 'playlist_name' 'index number'</b> : Delete song with index number</li>
+									<p>ex) !!playlist delete disney 3 -> delete number 3 song in disney playlist</p>
+
+								</ul>
+								</div>
+
+
+							</div>
+						</section>
+					</article>
+
+
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Untitled</li><li>Design: <a href="team.html">tirea</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<scritp src="https://cdn.rawgit.com/showdownjs/showdown/1.8.4/dist/showdown.min.js"></scritp>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<!--<script src="https://use.fontawesome.com/b60da19230.js"></script>-->
+			<script src="assets/js/main.js"></script>
+			<script>
+				$(document).ready(function(){
+					$('[data-toggle="popover"]').popover();
+				});
+			</script>
+
+	</body>
+</html>

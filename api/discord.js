@@ -2,13 +2,18 @@ const express = require('express');
 const fetch = require('node-fetch');
 const btoa = require('btoa');
 const { catchAsync } = require('../utils');
+var userData;
 var token;
+
 
 const router = express.Router();
 
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const redirect = encodeURIComponent('http://localhost:50451/api/discord/callback');
+const app = express();
+app.use(express.json());
+
 
 router.get('/login', (req, res) => {
     res.redirect(`https://discordapp.com/oauth2/authorize?client_id=${CLIENT_ID}&scope=identify&response_type=code&redirect_uri=${redirect}`);
@@ -47,7 +52,21 @@ const request = await fetch(`http://discordapp.com/api/users/@me`,
         },
     });
 const json = await request.json();
-
-res.redirect(`/?token=${json.username}`);
+    res.redirect(`/?token=${json.username}`);
 }));
 
+router.get('/userName', catchAsync(async (req, res) => {
+    // if (!req.query.code) throw new Error('NoCodeProvided');
+    console.log(token)
+    const creds = btoa(token);
+    const request = await fetch(`http://discordapp.com/api/users/@me`,
+        {
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+    const json = await request.json();
+    userData = json;
+    res.redirect(`/?token=${json.username}`);
+}));
