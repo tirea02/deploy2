@@ -20,6 +20,10 @@ app.get('/', function(req, res) {
 app.get('/index-ko', (req, res) => {
     res.status(200).sendFile(path.join(__dirname, 'index-ko.html'));
 });
+
+app.get('/team', (req, res) => {
+    res.status(200).sendFile(path.join(__dirname, 'team.html'));
+});
 app.listen(50451, () => {
     console.info('Running on port 9999');
 });

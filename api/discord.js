@@ -35,12 +35,12 @@ const response = await fetch(`https://discordapp.com/api/oauth2/token?grant_type
     });
 const json = await response.json();
 token = json.access_token;
-res.redirect(`/api/discord/test`);
-//res.redirect(`/?token=${json.access_token}`);
+//res.redirect(`/api/discord/test`);
+res.redirect(`/?token=${json.access_token}`);
 }));
 
 
-router.get('/test', catchAsync(async (req, res) => {
+router.get('/username', catchAsync(async (req, res) => {
    // if (!req.query.code) throw new Error('NoCodeProvided');
     console.log(token)
 const creds = btoa(token);
@@ -52,21 +52,6 @@ const request = await fetch(`http://discordapp.com/api/users/@me`,
         },
     });
 const json = await request.json();
-    res.redirect(`/?token=${json.username}`);
+    res.json(json);
 }));
 
-router.get('/userName', catchAsync(async (req, res) => {
-    // if (!req.query.code) throw new Error('NoCodeProvided');
-    console.log(token)
-    const creds = btoa(token);
-    const request = await fetch(`http://discordapp.com/api/users/@me`,
-        {
-            method: 'GET',
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        });
-    const json = await request.json();
-    userData = json;
-    res.redirect(`/?token=${json.username}`);
-}));
