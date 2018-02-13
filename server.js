@@ -24,7 +24,20 @@ app.get('/index-ko', (req, res) => {
 app.get('/team', (req, res) => {
     res.status(200).sendFile(path.join(__dirname, 'team.html'));
 });
-app.listen(50451, () => {
+
+app.get('/generic', (req, res) => {
+    res.status(200).sendFile(path.join(__dirname, 'generic.html'));
+});
+
+app.get('/generic-ko', (req, res) => {
+    res.status(200).sendFile(path.join(__dirname, 'generic-ko.html'));
+});
+
+// app.listen(50451, () => {
+//     console.info('Running on port 9999');
+// });
+
+app.listen(9999, '0.0.0.0', () => {
     console.info('Running on port 9999');
 });
 
