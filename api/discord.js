@@ -52,6 +52,7 @@ const request = await fetch(`http://discordapp.com/api/users/@me`,
         },
     });
 const json = await request.json();
+
     res.json(json);
 }));
 

@@ -61,16 +61,16 @@
 								<div class="command">
 								<h4>list of basic command</h4>
 								<ul>
-									<li><b>!!language</b> : select server language 1.Korean 2.English</li>
-									<li><b>!!tutorial</b> : simple tutorial for Melody</li>
-									<li><b>!!help</b> : DM to user Melody tutorial</li>
+									<li><b>!!language</b> :You can choose which language Melody will use</li>
+									<li><b>!!tutorial</b> : Melody sends 'Melody User's Guide' on chat</li>
+									<li><b>!!help</b> : Melody sends 'Melody User's Guide' by direct message</li>
 									<li><b>!!summon</b> : summon melody to my voice channel</li>
-									<li><b>!!patchnote</b> : show lastest patch note</li>
-									<li><b>!!my</b> : show all my playlist</li>
+									<li><b>!!patchnote</b> : Show patch notes for this version</li>
+
 								</ul>
 									<h4>List of play command</h4>
 									<ul>
-									<li><b>!!play 'youtubelink'</b> : play youtube link <i tabindex="0" class="fa fa-question-circle-o" aria-hidden="true" role="button"  data-toggle="modal" data-target="#myModal"></i>
+									<li><b>!!play 'youtubelink'</b> : Melody plays the video of the link you entered. If Melody is already playing something, plays the video at the end of the queue. <i tabindex="0" class="fa fa-question-circle-o" aria-hidden="true" role="button"  data-toggle="modal" data-target="#myModal"></i>
 									</li>
 
 									<!-- Modal -->
@@ -99,11 +99,12 @@
 									<p>ex) !!play https://www.youtube.com/watch?v=MhQKe-aERsU&list=RDMhQKe-aERsU</p>
 									<p>Case3 : text to search on youtube -> search text in youtube and play top listed video</p>
 									<p>ex) !!play tangled i see the light</p>
-								<li><b>!!now</b> : show enqueued songs  " <i tabindex="0" class="fa fa-question-circle-o" aria-hidden="true" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?"></i></li>
-								<li><b>!!pause</b> : Melody pauses playing song</li>
-								<li><b>!!resume</b> : Melody resume paused song</li>
-								<li><b>!!skip</b> : Melody skip now playing song and play next enqueued song  <i tabindex="0" class="fa fa-question-circle-o" data-toggle="popover" data-trigger="focus" title="Authority for skip" data-content="Requester of song can skip song without vote. Other people in voice channel should vote to skip song. People who is not in voice channel can't skeip song."></i></li>
-								<li><b>!!stop</b> : stop melody's action and kick out melody from voice channel</li>
+								<!--<li><b>!!now</b> : show enqueued songs  " <i tabindex="0" class="fa fa-question-circle-o" aria-hidden="true" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?"></i></li>-->
+								<li><b>!!pause</b> :Melody pauses playing and rests</li>
+								<li><b>!!resume</b> : Melody resumes playing</li>
+								<li><b>!!skip</b> : Melody stops playing and skips to next  <i tabindex="0" class="fa fa-question-circle-o" data-toggle="popover" data-trigger="focus" title="Authority for skip" data-content="Requester of song can skip song without vote. Other people in voice channel should vote to skip song. People who is not in voice channel can't skeip song."></i></li>
+								<li><b>!!stop</b> : Melody stops playing and leaves from the voice channel</li>
+								<li><b>!!now</b> : Melody shows the list of songs that is playing and is about to play</li>
 
 
 
@@ -111,20 +112,20 @@
 								</ul>
 								<h4> List of playlist command</h4>
 								<ul>
-									<li><b>!!playlist create 'playlist_name'</b> : create your play list</li>
-									<p>ex) !!playlist create disney </p>
-									<li><b>!!playlist add 'playlist_name'  'youtube_link'</b> : add play list</li>
-									<p>ex) !!playlist add disney  https://www.youtube.com/watch?v=J0lG8YorBsU</p>
-									<li><b>!!playlist show 'disney'</b> : check your playlist</li>
-									<p>ex) !!playlist show madmovie_bgm</p>
-									<li><b>!!!playlist load 'playlist_name'</b> : load playlist
+									<li><b>!!playlist create {playlist name}</b> : Melody creates a new playlist with the name you entered</li>
+									<p>(ex) !!playlist create my_music_list </p>
+									<li><b>!!playlist add {playlist name} {youtube link}</b> : Melody saves the video link to the playlist</li>
+									<p>(ex) !!playlist add my_music_list  link</p>
+									<li><b>!!playlist show {playlist name}</b> : Melody shows a list of videos stored in the playlist. And you can choose whether or not to play all the videos stored in the playlist</li>
+									<p>(ex) !!playlist show my_music_list</p>
+									<li><b>!!playlist load {playlist name}</b> :Melody is summoned to the voice channel and plays all the videos stored in the playlist
 										<i tabindex="0" class="fa fa-question-circle-o" aria-hidden="true" role="button" data-toggle="popover" data-trigger="focus" title="load Rule" data-content="You can only load playlist you've created. Please use search command to load other people's playlist "></i></li>
-									<p>ex) !!playlist load disney</p>
-									<li><b>!!playlist search 'playlist_name'</b> : List all playlist with their creater. You can select and load it by typing index of playlist.</li>
-									<p>ex) !!playlist search disney</p>
-									<li><b>!!playlist delete 'playlist_name' 'index number'</b> : Delete song with index number</li>
-									<p>ex) !!playlist delete disney 3 -> delete number 3 song in disney playlist</p>
-
+									<p>(ex) !!playlist load my_music_list</p>
+									<li><b>!!playlist search 'playlist_name'</b> : Melody searches playlist of other users. You can add searched playlist to current playing.</li>
+									<p>ex) !!playlist search IUSongs</p>
+									<li><b>!!playlist delete {playlist name} {number}</b> : Delete song with index number</li>
+									<p>ex) !!playlist delete iu 2 -> delete second 2 song in iu playlist</p>
+									<li><b>!!my</b> : show all my playlist</li>
 								</ul>
 								</div>
 
