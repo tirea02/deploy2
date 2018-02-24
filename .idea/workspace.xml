@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="256b18ce-f359-4af6-88fb-bdd44ef615e4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/js/login.js" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/images/ppang.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/discord.js" afterPath="$PROJECT_DIR$/api/discord.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generic-ko.html" afterPath="$PROJECT_DIR$/generic-ko.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generic.html" afterPath="$PROJECT_DIR$/generic.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/main.css" afterPath="$PROJECT_DIR$/static/assets/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/js/main.js" afterPath="$PROJECT_DIR$/static/assets/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team.html" afterPath="$PROJECT_DIR$/team.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -294,12 +286,12 @@
       <updated>1514101332157</updated>
       <workItem from="1514101333436" duration="1592000" />
       <workItem from="1514402024416" duration="2881000" />
-      <workItem from="1517035296202" duration="24116000" />
+      <workItem from="1517035296202" duration="24245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28589000" />
+    <option name="totallyTimeSpent" value="28718000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
