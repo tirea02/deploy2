@@ -23,6 +23,9 @@
 						<h1><a href="/">Melody</a></h1>
 						<nav id="nav">
 							<ul>
+								<li>
+									<a href="/generic-ko"><span>한국어</span></a>
+								</li>
 								<li class="special">
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
@@ -59,74 +62,78 @@
 
 								<!--<hr />-->
 								<div class="command">
-								<h4>list of basic command</h4>
-								<ul>
-									<li><b>!!language</b> :You can choose which language Melody will use</li>
-									<li><b>!!tutorial</b> : Melody sends 'Melody User's Guide' on chat</li>
-									<li><b>!!help</b> : Melody sends 'Melody User's Guide' by direct message</li>
-									<li><b>!!summon</b> : summon melody to my voice channel</li>
-									<li><b>!!patchnote</b> : Show patch notes for this version</li>
-
-								</ul>
-									<h4>List of play command</h4>
-									<ul>
-									<li><b>!!play 'youtubelink'</b> : Melody plays the video of the link you entered. If Melody is already playing something, plays the video at the end of the queue. <i tabindex="0" class="fa fa-question-circle-o" aria-hidden="true" role="button"  data-toggle="modal" data-target="#myModal"></i>
-									</li>
-
-									<!-- Modal -->
-									<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-										<div class="modal-dialog">
-											<div class="modal-content">
-												<div class="modal-header">
-													<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-													<h4 class="modal-title" id="myModalLabel">Why there is 2 case?</h4>
-												</div>
-												<div class="modal-body">
-													There is two type of youtube link
-													<br>1.sigle video link
-													<br>2.playlist link.
-													<br>3. text to search in youtube
-												</div>
-												<div class="modal-footer">
-													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<p>Case1 : single video link ->  play single song</p>
-									<p>ex) !!play https://www.youtube.com/watch?v=MhQKe-aERsU</p>
-									<p>Case2 : youtube playlist of video -> play all song in playlist</p>
-									<p>ex) !!play https://www.youtube.com/watch?v=MhQKe-aERsU&list=RDMhQKe-aERsU</p>
-									<p>Case3 : text to search on youtube -> search text in youtube and play top listed video</p>
-									<p>ex) !!play tangled i see the light</p>
-								<!--<li><b>!!now</b> : show enqueued songs  " <i tabindex="0" class="fa fa-question-circle-o" aria-hidden="true" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?"></i></li>-->
-								<li><b>!!pause</b> :Melody pauses playing and rests</li>
-								<li><b>!!resume</b> : Melody resumes playing</li>
-								<li><b>!!skip</b> : Melody stops playing and skips to next  <i tabindex="0" class="fa fa-question-circle-o" data-toggle="popover" data-trigger="focus" title="Authority for skip" data-content="Requester of song can skip song without vote. Other people in voice channel should vote to skip song. People who is not in voice channel can't skeip song."></i></li>
-								<li><b>!!stop</b> : Melody stops playing and leaves from the voice channel</li>
-								<li><b>!!now</b> : Melody shows the list of songs that is playing and is about to play</li>
 
 
 
+									<h2>Melody User's Guide: play command instructions</h2>
+									<h3>!!summon</h3>
+									<p>Summons Melody to the voice channel.</p>
+									<h3>!!play {youtube link}</h3>
+									<p>Melody plays the video of the link you entered.
+										If Melody is already playing something, plays the video at the end of the queue.</p>
+									<blockquote><p>(ex) !!play <a href='https://www.youtube.com/watch?v=EiVmQZwJhsA' target='_blank' >https://www.youtube.com/watch?v=EiVmQZwJhsA</a></p>
+									</blockquote>
+									<h3>!!play {search word}</h3>
+									<p>Melody plays the video that searched by keyword you entered.
+										If Melody is already playing something, plays the video at the end of the queue.</p>
+									<blockquote><p>(ex) !!play IU-Friday</p>
+									</blockquote>
+									<h3>!!pause</h3>
+									<p>Melody pauses playing and rests.</p>
+									<h3>!!resume</h3>
+									<p>Melody resumes playing.</p>
+									<h3>!!stop</h3>
+									<p>Melody stops playing and leaves from the voice channel.</p>
+									<h3>!!skip</h3>
+									<p>Melody stops playing and skips to next.</p>
+									<h3>!!now</h3>
+									<p>Melody shows the list of songs that is playing and is about to play.</p>
 
-								</ul>
-								<h4> List of playlist command</h4>
-								<ul>
-									<li><b>!!playlist create {playlist name}</b> : Melody creates a new playlist with the name you entered</li>
-									<p>(ex) !!playlist create my_music_list </p>
-									<li><b>!!playlist add {playlist name} {youtube link}</b> : Melody saves the video link to the playlist</li>
-									<p>(ex) !!playlist add my_music_list  link</p>
-									<li><b>!!playlist show {playlist name}</b> : Melody shows a list of videos stored in the playlist. And you can choose whether or not to play all the videos stored in the playlist</li>
-									<p>(ex) !!playlist show my_music_list</p>
-									<li><b>!!playlist load {playlist name}</b> :Melody is summoned to the voice channel and plays all the videos stored in the playlist
-										<i tabindex="0" class="fa fa-question-circle-o" aria-hidden="true" role="button" data-toggle="popover" data-trigger="focus" title="load Rule" data-content="You can only load playlist you've created. Please use search command to load other people's playlist "></i></li>
-									<p>(ex) !!playlist load my_music_list</p>
-									<li><b>!!playlist search 'playlist_name'</b> : Melody searches playlist of other users. You can add searched playlist to current playing.</li>
-									<p>ex) !!playlist search IUSongs</p>
-									<li><b>!!playlist delete {playlist name} {number}</b> : Delete song with index number</li>
-									<p>ex) !!playlist delete iu 2 -> delete second 2 song in iu playlist</p>
-									<li><b>!!my</b> : show all my playlist</li>
-								</ul>
+									<br>
+									<h2>Melody User&#39;s Guide: using playlist function</h2>
+									<p>What is a &#39;playlist&#39;? Melody remembers your playlist and helps you to enjoy your music easily:D</p>
+									<h3>!!playlist create {playlist name}</h3>
+									<p>Melody creates a new playlist with the name you entered.</p>
+									<blockquote><p>(ex) !!playlist create my_music_list</p>
+									</blockquote>
+									<h3>!!playlist add {playlist name} {youtube link}</h3>
+									<p>Melody saves the video link to the playlist.</p>
+									<blockquote><p>(ex) !!playlist add my_music_list <a href='https://www.youtube.com/watch?v=EiVmQZwJhsA' target='_blank' >https://www.youtube.com/watch?v=EiVmQZwJhsA</a></p>
+									</blockquote>
+									<h3>!!playlist show {playlist name}</h3>
+									<p>Melody shows a list of videos stored in the playlist. And you can choose whether or not to play all the videos stored in the playlist.</p>
+									<blockquote><p>(ex) !!playlist show my_music_list</p>
+									</blockquote>
+									<h3>!!playlist load {playlist name}</h3>
+									<p>Melody is summoned to the voice channel and plays all the videos stored in the playlist.</p>
+									<blockquote><p>(ex) !!playlist load my_music_list</p>
+									</blockquote>
+									<h3>!!playlist search {playlist name}</h3>
+									<p>Melody searches playlist of other users. You can add searched playlist to current playing.</p>
+									<blockquote><p>(ex) !!playlist search IUSongs</p>
+									</blockquote>
+									<h3>!!playlist delete {playlist name} {number}</h3>
+									<p>Melody removes specific songs frome the playlist. The following example removes the second song in the iu playlist.</p>
+									<blockquote><p>(ex) !!playlist delete iu 2</p>
+									</blockquote>
+									<h3>!!my</h3>
+									<p>Melody shows list of playlist you owned.</p>
+									<h3>destroy</h3>
+									<p>coming soon</p>
+
+
+									<h2>Melody User's Guide: Appendix</h2>
+									<h3>!!tutorial</h3>
+									<p>Melody sends 'Melody User's Guide' on chat.</p>
+									<br>
+									<h3>!!help</h3>
+									<p>Melody sends 'Melody User's Guide' by direct message.</p>
+									<br>
+									<h3>!!language</h3>
+									<p>You can choose which language Melody will use.</p>
+									<h3>!!patchnote</h3>
+									<p>Show patch notes for this version.</p>
+
 								</div>
 
 

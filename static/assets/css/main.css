@@ -2220,9 +2220,13 @@
 
 /* command */
 	.command p{
-		margin-left: 2em;
+
 		margin-bottom: 0.1em;
 
+	}
+
+	.command h3{
+		margin-bottom : 0em;
 	}
 
 /* generic_video */

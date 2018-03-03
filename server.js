@@ -33,13 +33,18 @@ app.get('/generic-ko', (req, res) => {
     res.status(200).sendFile(path.join(__dirname, 'generic-ko.html'));
 });
 
-// app.listen(50451, () => {
-//     console.info('Running on port 9999');
-// });
+app.get('/team-ko', (req, res) => {
+    res.status(200).sendFile(path.join(__dirname, 'team-ko.html'));
+});
 
-app.listen(9999, '0.0.0.0', () => {
+
+app.listen(50451, () => {
     console.info('Running on port 9999');
 });
+
+// app.listen(9999, '0.0.0.0', () => {
+//     console.info('Running on port 9999');
+// });
 
 
 // Routes
