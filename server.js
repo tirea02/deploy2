@@ -1,11 +1,19 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors')();
 
 const app = express();
+//app.use(cors);
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
+
+
+
+
+
+
 
 // app.get('/', (req, res) => {
 //     res.status(200).sendFile(path.join(__dirname, 'index.html'));
@@ -19,6 +27,10 @@ app.get('/', function(req, res) {
 
 app.get('/index-ko', (req, res) => {
     res.status(200).sendFile(path.join(__dirname, 'index-ko.html'));
+});
+
+app.get('/playlist', (req, res) => {
+    res.status(200).sendFile(path.join(__dirname, 'playlist.html'));
 });
 
 app.get('/team', (req, res) => {
@@ -38,14 +50,18 @@ app.get('/team-ko', (req, res) => {
 });
 
 
-// app.listen(50451, () => {
-//     console.info('Running on local');
-// });
-
-app.listen(9999, '0.0.0.0', () => {
-    console.info('Running on port 9999');
+app.listen(50451, () => {
+    console.info('Running on local');
 });
 
+// app.listen(9999, '0.0.0.0', () => {
+//     console.info('Running on port 9999');
+// });
+
+
+// 이 부분은 app.use(router) 전에 추가하도록 하자
+
+app.use(cors);
 
 // Routes
 app.use('/api/discord', require('./api/discord'));

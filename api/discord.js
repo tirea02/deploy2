@@ -6,6 +6,7 @@ var userData;
 var token;
 
 
+
 const router = express.Router();
 
 const CLIENT_ID = process.env.CLIENT_ID;
@@ -37,23 +38,49 @@ const json = await response.json();
 token = json.access_token;
 //res.redirect(`/api/discord/test`);
 //res.redirect(`/?token=${json.access_token}`);
+
     res.redirect(`/`);
 }));
 
 
 router.get('/username', catchAsync(async (req, res) => {
-   // if (!req.query.code) throw new Error('NoCodeProvided');
-    console.log(token);
-const creds = btoa(token);
-const request = await fetch(`http://discordapp.com/api/users/@me`,
-    {
-        method: 'GET',
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-    });
-const json = await request.json();
-
+    // if (!req.query.code) throw new Error('NoCodeProvided');
+    // console.log(token);
+    const creds = btoa(token);
+    const request = await fetch(`http://discordapp.com/api/users/@me`,
+        {
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+    const json = await request.json();
+    userData = json;
     res.json(json);
 }));
 
+router.get('/logout', catchAsync(async (req, res) => {
+    // if (!req.query.code) throw new Error('NoCodeProvided');
+    // console.log(token);
+
+
+   json = "";
+   userData ="";
+   token = "";
+   res.redirect("/");
+
+}));
+
+router.get('/playlist', catchAsync(async (req, res) => {
+    const creds = btoa(token);
+    const request = await fetch(`http://api.melodybot.me/playlists?type=2&creator_id=${userData.id}`,
+        {
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+    const json = await request.json();
+
+    res.json(json);
+}));
