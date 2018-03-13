@@ -50,13 +50,13 @@ app.get('/team-ko', (req, res) => {
 });
 
 
-app.listen(50451, () => {
-    console.info('Running on local');
-});
-
-// app.listen(9999, '0.0.0.0', () => {
-//     console.info('Running on port 9999');
+// app.listen(50451, () => {
+//     console.info('Running on local');
 // });
+
+app.listen(9999, '0.0.0.0', () => {
+    console.info('Running on port 9999');
+});
 
 
 // 이 부분은 app.use(router) 전에 추가하도록 하자
