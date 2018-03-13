@@ -1,9 +1,8 @@
 const express = require('express');
 const path = require('path');
-const cors = require('cors')();
+
 
 const app = express();
-//app.use(cors);
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
@@ -59,9 +58,6 @@ app.listen(9999, '0.0.0.0', () => {
 });
 
 
-// 이 부분은 app.use(router) 전에 추가하도록 하자
-
-app.use(cors);
 
 // Routes
 app.use('/api/discord', require('./api/discord'));
